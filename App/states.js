@@ -1,6 +1,3 @@
-var logInput = require('./Middleware/logInput')
-var loadRoster = require('./Middleware/loadRoster')
-
 var MainFlow = {
     'main': {
         activeIntents: ['welcome','goToRoster'],
@@ -12,11 +9,11 @@ var MainFlow = {
     },
     'rosterFull': {
         activeIntents: ['addPlayers', 'removePlayers', 'clearRoster','startGame', 'startOver'],
-        middleware: [loadRoster, logInput]
+        middleware: ['loadRoster', 'logInput']
     },
     "game":{
         activeIntents: ['startOver', 'flip'],
-        middleware: [loadRoster, logInput]
+        middleware: ['logInput', 'loadRoster']
     }
 
 }

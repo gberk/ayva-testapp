@@ -12,10 +12,13 @@ var IntentMap = require('./App/Intents')
 var GavParser = require('./GavParser')
 var States = require('./App/states')
 var Ayva = require('../ayva')
+var LoadRoster = require('./App/Middleware/loadRoster')
 
 //AYVA CONFIG
 Ayva.Config.RegisterIntents(IntentMap);
-Ayva.Config.RegisterStates(States)
+Ayva.Config.RegisterMiddleware(LoadRoster);
+Ayva.Config.RegisterStates(States);
+
 Ayva.ExecuteRequest.FromGav = GavParser;
 
 app.post('/gAssistant', function(req, res) {

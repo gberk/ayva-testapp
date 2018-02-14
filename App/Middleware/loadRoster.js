@@ -1,7 +1,7 @@
 var Roster = require('../Models/Roster')
 
 var loadRoster = function(context){
-    return Roster.getRoster(context.args.sessionCode)
+    context.Roster = Roster.getRoster(context.args.sessionCode)
 }
 
-module.exports = loadRoster
+module.exports = {'loadRoster': loadRoster}

@@ -1,21 +1,21 @@
 var _ = require('lodash')
 
 var Roster = function(){
-    this.roster = {};
+    var roster = {'gavin': 'Gavin'};
 
-    this.addToRoster = function(sessionId, name){
-        if(!this.roster[sessionId])
-            this.roster[sessionId] = []
-
-        this.roster[sessionId].push(name)
-    }
-
-    this.removeFromRoster = function(sessionId,name){
-        _.difference(this.roster[sessionId] || [],names) 
-    }
-
-    this.getRoster = function(sessionId){
-        return this.roster[sessionId]
+    return {
+        addToRoster: function(sessionId, name){
+            if(!roster[sessionId])
+                roster[sessionId] = []
+    
+            roster[sessionId].push(name)
+        },
+        removeFromRoster: function(sessionId,name){
+            _.difference(roster[sessionId] || [],names) 
+        },
+        getRoster: function(sessionId){
+            return roster[sessionId]
+        }
     }
 }()
 

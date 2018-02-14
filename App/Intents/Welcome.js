@@ -1,10 +1,4 @@
-
-var execute = function(context){
-    context.assistant.say("You're welcome!").finish();
+var Welcome = function(Context){
+    Context.assistant.say("Welcome").finish()
 }
-
-var WelcomeIntent = {
-    execute: execute
-}
-
-module.exports = WelcomeIntent;    
+module.exports = Welcome;
