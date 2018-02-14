@@ -1,6 +1,6 @@
 
 var execute = function(context){
-    context.say("You're welcome!").finish();
+    context.assistant.say("You're welcome!").finish();
 }
 
 var WelcomeIntent = {
